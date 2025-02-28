@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Servidor {
     public static void main(String[] args) {
-        int puerto = 54321;  // Puerto modificado
+        int puerto = 54321;  
 
         try (ServerSocket servidor = new ServerSocket(puerto)) {
             System.out.println("Servidor iniciado en el puerto " + puerto);
@@ -43,9 +43,9 @@ public class Servidor {
                     String respuesta = reader.readLine().trim().toLowerCase();
 
                     if (respuesta.equals("si")) {
-                        // Preguntar cuántas contraseñas quiere generar el usuario
+                        // Preguntar cuántas contraseñas quiere generar 
                         writer.println("¿Cuántas contraseñas deseas generar?");
-                        int cantidadContraseñas = Integer.parseInt(reader.readLine()); // El cliente responderá con el número de contraseñas
+                        int cantidadContraseñas = Integer.parseInt(reader.readLine()); // El cliente respondera
 
                         // Bucle para generar y mostrar las contraseñas
                         for (int i = 1; i <= cantidadContraseñas; i++) {
@@ -79,17 +79,17 @@ public class Servidor {
         StringBuilder contraseña = new StringBuilder();
         Random rand = new Random();
 
-        // Añadir mayúsculas
+        // Añadir mayusculas
         for (int i = 0; i < numMayusculas; i++) {
             contraseña.append(mayusculas.charAt(rand.nextInt(mayusculas.length())));
         }
 
-        // Añadir minúsculas
+        // Añadir minusculas
         for (int i = 0; i < numMinusculas; i++) {
             contraseña.append(minusculas.charAt(rand.nextInt(minusculas.length())));
         }
 
-        // Añadir dígitos
+        // Añadir digitos
         for (int i = 0; i < numDigitos; i++) {
             contraseña.append(digitos.charAt(rand.nextInt(digitos.length())));
         }
