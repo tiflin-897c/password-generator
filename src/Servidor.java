@@ -99,7 +99,7 @@ public class Servidor {
             contraseña.append(especiales.charAt(rand.nextInt(especiales.length())));
         }
 
-        // Si la contraseña tiene menos de la longitud total, completamos con caracteres aleatorios
+        // Si la contraseña tiene menos de la longitud total completamos con caracteres aleatorios
         String allChars = mayusculas + minusculas + digitos + especiales;
         while (contraseña.length() < numMayusculas + numMinusculas + numDigitos + numEspeciales) {
             contraseña.append(allChars.charAt(rand.nextInt(allChars.length())));
